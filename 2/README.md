@@ -5,6 +5,7 @@ We need to understand that, there are two main instruments to program the node
 We need to create the ROS2 Node.
 
 ```python
+#!/usr/bin/python3
 import rclpy
 from std_msgs.msg import String
 from rclpy.node import Node
@@ -22,6 +23,9 @@ def main():
     finally:
         node.destroy_node()
         rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
 ```
 
 This is the basic of all node creation.
@@ -37,6 +41,7 @@ sub = node.create_subscription(String, 'chatter', callback_function, 10)
 to create the publisher we need to initalize the publisher within `__init__` function.
 
 ```python
+#!/usr/bin/python3
 import rclpy
 from std_msgs.msg import String
 from rclpy.node import Node
@@ -62,6 +67,9 @@ def main():
     finally:
         node.destroy_node()
         rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
 ```
 
 ## Subscriber
@@ -69,6 +77,7 @@ def main():
 Subscriber is very similar to publisher. We need to create the subscriber within `__init__` function.
 
 ```python
+#!/usr/bin/python3
 import rclpy
 from std_msgs.msg import String
 from rclpy.node import Node
@@ -92,6 +101,9 @@ def main():
     finally:
         node.destroy_node()
         rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
 ```
 
 ## Node Structure
